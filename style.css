@@ -5,6 +5,8 @@ body {
   background: #f7f7f7;
   color: #333;
 }
+
+/* === LOGO === */
 .logo-title {
   display: flex;
   align-items: center;
@@ -16,36 +18,16 @@ body {
   filter: brightness(0) invert(1);
 }
 
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-.contact-info {
-  flex: 1;
-  min-width: 300px;
-}
-
-.contact-image {
-  flex: 1;
-  min-width: 300px;
-}
-.contact-image img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
+/* === HERO / BANNER === */
 .hero {
-  background: url('../assets/building.jpg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
   height: 100vh;
   color: white;
-  position: relative;
 }
-
 .hero .overlay {
+  position: relative;
+  z-index: 1;
   background: rgba(0, 0, 0, 0.55);
   height: 100%;
   display: flex;
@@ -55,17 +37,16 @@ body {
   text-align: center;
   padding: 20px;
 }
-
 .hero h1 {
   font-size: 3rem;
   margin: 0;
 }
-
 .hero p {
   font-size: 1.2rem;
   margin: 10px 0 20px;
 }
 
+/* === LINGUAS / MENU === */
 .lang-switch {
   margin: 10px;
 }
@@ -79,7 +60,6 @@ body {
   border-radius: 4px;
   font-weight: bold;
 }
-
 nav a {
   color: white;
   margin: 0 10px;
@@ -87,6 +67,7 @@ nav a {
   font-weight: bold;
 }
 
+/* === SEÇÕES === */
 section {
   padding: 60px 20px;
   max-width: 1000px;
@@ -96,12 +77,12 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 h2 {
   color: #004080;
   margin-bottom: 20px;
 }
 
+/* === SOBRE NÓS === */
 .about-container {
   display: flex;
   flex-wrap: wrap;
@@ -117,6 +98,7 @@ h2 {
   line-height: 1.6;
 }
 
+/* === SERVIÇOS === */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -132,6 +114,28 @@ h2 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* === CONTACTOS === */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* === FORMULÁRIO === */
 form label {
   display: block;
   margin-top: 10px;
@@ -154,6 +158,7 @@ form button {
   cursor: pointer;
 }
 
+/* === FOOTER === */
 footer {
   background: #00264d;
   color: white;
