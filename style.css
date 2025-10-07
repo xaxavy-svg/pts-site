@@ -5,6 +5,38 @@ body {
   background: #f7f7f7;
   color: #333;
 }
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  width: 70px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-image {
+  flex: 1;
+  min-width: 300px;
+}
+.contact-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 .hero {
   background: url('../assets/building.jpg') center/cover no-repeat;
