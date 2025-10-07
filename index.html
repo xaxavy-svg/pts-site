@@ -6,11 +6,6 @@
   <title>PTS Lda. - Contabilidade</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Fade suave do slideshow */
-    .hero {
-      transition: background-image 1s ease-in-out;
-    }
-
     /* Logo e título lado a lado */
     .logo-title {
       display: flex;
@@ -18,7 +13,6 @@
       gap: 12px;
       justify-content: center;
     }
-
     .logo {
       width: 70px;
       height: auto;
@@ -33,17 +27,14 @@
       align-items: flex-start;
       justify-content: space-between;
     }
-
     .contact-info {
       flex: 1;
       min-width: 300px;
     }
-
     .contact-image {
       flex: 1;
       min-width: 300px;
     }
-
     .contact-image img {
       width: 100%;
       border-radius: 8px;
@@ -140,22 +131,48 @@
 
 <script src="lang.js"></script>
 <script>
-// Slideshow com fade suave
+// Slideshow com fade real (sem piscar)
 const hero = document.getElementById('hero');
 const images = ['building.jpeg', 'building2.jpeg', 'building3.jpeg'];
 let index = 0;
 
+// Criar camadas internas para o fade
+const layer1 = document.createElement('div');
+const layer2 = document.createElement('div');
+
+[layer1, layer2].forEach(layer => {
+  layer.style.position = 'absolute';
+  layer.style.top = 0;
+  layer.style.left = 0;
+  layer.style.width = '100%';
+  layer.style.height = '100%';
+  layer.style.backgroundSize = 'cover';
+  layer.style.backgroundPosition = 'center';
+  layer.style.transition = 'opacity 1.5s ease-in-out';
+  layer.style.zIndex = 0;
+});
+
+layer1.style.backgroundImage = `url('${images[0]}')`;
+layer1.style.opacity = 1;
+layer2.style.opacity = 0;
+
+hero.prepend(layer1);
+hero.prepend(layer2);
+
 function changeBackground() {
-  hero.style.opacity = 0;
-  setTimeout(() => {
-    hero.style.background = `url('${images[index]}') center/cover no-repeat`;
-    hero.style.opacity = 1;
-    index = (index + 1) % images.length;
-  }, 1000);
+  const nextIndex = (index + 1) % images.length;
+  const visible = index % 2 === 0 ? layer1 : layer2;
+  const hidden = index % 2 === 0 ? layer2 : layer1;
+
+  hidden.style.backgroundImage = `url('${images[nextIndex]}')`;
+  hidden.style.opacity = 1;
+  visible.style.opacity = 0;
+
+  index = nextIndex;
 }
 
-changeBackground();
-setInterval(changeBackground, 3000);
+setInterval(changeBackground, 4000); // muda a cada 4 segundos
 </script>
 </body>
 </html>
+
