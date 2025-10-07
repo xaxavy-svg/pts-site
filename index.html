@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header class="hero" style="background:url('office (2).jpg') center/cover no-repeat;">
+<header class="hero" id="hero">
   <div class="overlay">
     <h1 id="title">PTS Lda.</h1>
     <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
@@ -27,7 +27,7 @@
 <section id="sobre">
   <h2 id="about-title">Sobre Nós</h2>
   <div class="about-container">
-    <img src="office (2).jpg" alt="Escritório PTS">
+    <img src="office.jpg" alt="Escritório PTS">
     <p id="about-text">
       A PTS Lda. é uma empresa de contabilidade com mais de 20 anos de experiência,
       especializada em apoiar empresas e particulares na gestão fiscal, financeira e estratégica.
@@ -39,11 +39,11 @@
 <section id="servicos">
   <h2 id="services-title">Serviços</h2>
   <div class="services-grid" id="services-list">
-    <div class="card">📊 Contabilidade e Fiscalidade</div>
-    <div class="card">💼 Consultoria Financeira</div>
-    <div class="card">🏢 Gestão Empresarial</div>
-    <div class="card">🧾 Apoio em IVA e Obrigações Fiscais</div>
-    <div class="card">🚀 Criação de Empresas</div>
+    <div class="card"> Contabilidade e Fiscalidade</div>
+    <div class="card"> Consultoria Financeira</div>
+    <div class="card"> Gestão Empresarial</div>
+    <div class="card"> Apoio em IVA e Obrigações Fiscais</div>
+    <div class="card"> Criação de Empresas</div>
   </div>
 </section>
 
@@ -83,5 +83,19 @@
 </footer>
 
 <script src="lang.js"></script>
+<script>
+// Slideshow automático do banner
+const hero = document.getElementById('hero');
+const images = ['building1.jpg', 'building2.jpg', 'building3.jpg'];
+let index = 0;
+
+function changeBackground() {
+  hero.style.background = `url('${images[index]}') center/cover no-repeat`;
+  index = (index + 1) % images.length;
+}
+
+changeBackground(); // inicializa
+setInterval(changeBackground, 3000); // muda a cada 3s
+</script>
 </body>
 </html>
