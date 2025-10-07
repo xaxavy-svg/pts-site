@@ -5,12 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PTS Lda. - Contabilidade</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fade suave do slideshow */
+    .hero {
+      transition: background-image 1s ease-in-out;
+    }
+
+    /* Logo e título lado a lado */
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .logo {
+      width: 70px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Layout dos contactos com imagem */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+  </style>
 </head>
 <body>
 
 <header class="hero" id="hero">
   <div class="overlay">
-    <h1 id="title">PTS Lda.</h1>
+    <div class="logo-title">
+      <img src="logo.png" alt="Logo PTS" class="logo">
+      <h1 id="title">PTS Lda.</h1>
+    </div>
     <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
     <div class="lang-switch">
       <button onclick="setLang('pt')">PT</button>
@@ -39,43 +87,51 @@
 <section id="servicos">
   <h2 id="services-title">Serviços</h2>
   <div class="services-grid" id="services-list">
-    <div class="card"> Contabilidade e Fiscalidade</div>
-    <div class="card"> Consultoria Financeira</div>
-    <div class="card"> Gestão Empresarial</div>
-    <div class="card"> Apoio em IVA e Obrigações Fiscais</div>
-    <div class="card"> Criação de Empresas</div>
+    <div class="card">📊 Contabilidade e Fiscalidade</div>
+    <div class="card">💼 Consultoria Financeira</div>
+    <div class="card">🏢 Gestão Empresarial</div>
+    <div class="card">🧾 Apoio em IVA e Obrigações Fiscais</div>
+    <div class="card">🚀 Criação de Empresas</div>
   </div>
 </section>
 
 <section id="contactos">
   <h2 id="contact-title">Contactos</h2>
-  <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
-  <p><strong>Telefone:</strong> +351 214584827</p>
-  <p><strong>Email:</strong> geral@ptsgestao.pt</p>
+  <div class="contact-container">
+    <div class="contact-info">
+      <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
+      <p><strong>Telefone:</strong> +351 214584827</p>
+      <p><strong>Email:</strong> geral@ptsgestao.pt</p>
 
-  <h3 id="form-title">Envie-nos uma mensagem</h3>
-  <form action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain">
-    <label for="name" id="label-name">Nome:</label>
-    <input type="text" id="name" name="name" required>
+      <h3 id="form-title">Envie-nos uma mensagem</h3>
+      <form action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain">
+        <label for="name" id="label-name">Nome:</label>
+        <input type="text" id="name" name="name" required>
 
-    <label for="email" id="label-email">Email:</label>
-    <input type="email" id="email" name="email" required>
+        <label for="email" id="label-email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-    <label for="topic" id="label-topic">Assunto:</label>
-    <select id="topic" name="topic">
-      <option value="novo">Novo Cliente</option>
-      <option value="empresa">Nova Empresa</option>
-      <option value="consultas">Consultas Financeiras</option>
-      <option value="iva">Sobre IVA</option>
-      <option value="gestao">Sobre Gestão</option>
-      <option value="outro">Outro</option>
-    </select>
+        <label for="topic" id="label-topic">Assunto:</label>
+        <select id="topic" name="topic">
+          <option value="novo">Novo Cliente</option>
+          <option value="empresa">Nova Empresa</option>
+          <option value="consultas">Consultas Financeiras</option>
+          <option value="iva">Sobre IVA</option>
+          <option value="gestao">Sobre Gestão</option>
+          <option value="outro">Outro</option>
+        </select>
 
-    <label for="message" id="label-message">Mensagem:</label>
-    <textarea id="message" name="message" rows="5"></textarea>
+        <label for="message" id="label-message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5"></textarea>
 
-    <button type="submit" id="btn-send">Enviar</button>
-  </form>
+        <button type="submit" id="btn-send">Enviar</button>
+      </form>
+    </div>
+
+    <div class="contact-image">
+      <img src="building_entry.jpg" alt="Entrada do edifício PTS">
+    </div>
+  </div>
 </section>
 
 <footer>
@@ -84,18 +140,22 @@
 
 <script src="lang.js"></script>
 <script>
-// Slideshow automático do banner
+// Slideshow com fade suave
 const hero = document.getElementById('hero');
 const images = ['building.jpeg', 'building2.jpeg', 'building3.jpeg'];
 let index = 0;
 
 function changeBackground() {
-  hero.style.background = `url('${images[index]}') center/cover no-repeat`;
-  index = (index + 1) % images.length;
+  hero.style.opacity = 0;
+  setTimeout(() => {
+    hero.style.background = `url('${images[index]}') center/cover no-repeat`;
+    hero.style.opacity = 1;
+    index = (index + 1) % images.length;
+  }, 1000);
 }
 
-changeBackground(); // inicializa
-setInterval(changeBackground, 3000); // muda a cada 3s
+changeBackground();
+setInterval(changeBackground, 3000);
 </script>
 </body>
 </html>
