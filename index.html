@@ -1,52 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PTS Lda. - Contabilidade</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Ajustes rápidos para logo e contactos */
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      justify-content: center;
-    }
-    .logo {
-      width: 70px;
-      height: auto;
-      filter: brightness(0) invert(1);
-    }
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: flex-start;
-      justify-content: space-between;
-    }
-    .contact-info {
-      flex: 1;
-      min-width: 300px;
-    }
-    .contact-image {
-      flex: 1;
-      min-width: 300px;
-    }
-    .contact-image img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PTS Lda. - Contabilidade e Gestão</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
 <header class="hero" id="hero">
   <div class="overlay">
     <div class="logo-title">
-      <img src="assets/logo1.png" alt="Logo PTS" class="logo">
+      <img src="assets/logo1.png" alt="Logo PTS" class="logo" />
       <h1 id="title">PTS Lda.</h1>
     </div>
     <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
@@ -66,65 +31,74 @@
 
 <!-- SOBRE NÓS -->
 <section id="sobre">
-  <h2>Sobre Nós</h2>
-  <div class="about-container">
-    <img src="assets/office.jpeg" alt="Escritório PTS">
-    <p>
-      A <strong>PTS Lda.</strong> é um gabinete de contabilidade com mais de <strong>20 anos de experiência</strong>, com escritórios em Oeiras e Lisboa.
-      Somos uma equipa dedicada e multidisciplinar, especializada em <strong>contabilidade, consultoria fiscal e de gestão, recursos humanos e serviços administrativos</strong>.
-      <br><br>
-      Trabalhamos de forma dinâmica e moderna, fazendo uso das tecnologias mais recentes para oferecer um serviço de excelência. Acreditamos numa relação próxima e transparente com cada cliente, respondendo de forma rápida e proativa.
-      <br><br>
-      Enviamos periodicamente informações fiscais simplificadas para garantir que os nossos clientes compreendem as mudanças legais e aproveitam todas as oportunidades fiscais disponíveis.
-    </p>
+  <div class="content-section">
+    <div class="text-block">
+      <h2>Sobre Nós</h2>
+      <p>
+        A <strong>PTS Lda.</strong> é um gabinete de contabilidade com mais de <strong>20 anos de experiência</strong>,
+        localizado em Oeiras, com atuação em todo o país e clientes internacionais.
+        A nossa equipa é composta por profissionais especializados em <strong>contabilidade</strong>,
+        <strong>consultoria fiscal e de gestão</strong>, <strong>recursos humanos</strong> e <strong>serviços administrativos</strong>.
+      </p>
+      <p>
+        O nosso objetivo é oferecer um serviço de excelência, baseado em <strong>confiança, rigor e proximidade</strong>.
+        Trabalhamos lado a lado com as empresas, garantindo uma gestão sólida e eficiente,
+        com acompanhamento personalizado e soluções adaptadas à realidade de cada negócio.
+      </p>
+      <p>
+        Investimos continuamente em tecnologia e inovação, assegurando uma comunicação rápida e transparente,
+        e simplificando processos através de ferramentas digitais seguras.
+      </p>
+    </div>
+    <div class="image-block">
+      <img src="assets/office.jpeg" alt="Escritório PTS" />
+    </div>
   </div>
 </section>
 
 <!-- SERVIÇOS -->
 <section id="servicos">
   <h2>Os Nossos Serviços</h2>
-  <p class="services-intro">
-    Entregue a contabilidade da sua empresa a profissionais competentes e com suporte técnico especializado — um fator essencial para o desenvolvimento e bom funcionamento de qualquer negócio.
+  <p class="section-intro">
+    Oferecemos soluções completas nas áreas contabilística, fiscal, financeira e administrativa,  
+    ajudando empresas e empreendedores a crescer com segurança, rigor e informação estratégica.
   </p>
 
-  <div class="services-grid" id="services-list">
-    <div class="card">
+  <div class="services-container">
+    <div class="service-box">
       <h3>Contabilidade e Fiscalidade</h3>
-      <p>Gestão contabilística completa, cumprimento das obrigações legais e fiscais, relatórios financeiros e apoio permanente à gestão.</p>
+      <p>Gestão contabilística completa e rigorosa, cumprimento de obrigações fiscais,  
+         relatórios financeiros claros e apoio constante à administração.</p>
     </div>
-    <div class="card">
+    <div class="service-box">
       <h3>Consultoria Financeira</h3>
-      <p>Aconselhamento estratégico e fiscal, otimização de custos, planeamento financeiro e acompanhamento personalizado da evolução do seu negócio.</p>
+      <p>Planeamento estratégico, otimização fiscal, análise de indicadores e acompanhamento na tomada de decisões,  
+         garantindo a sustentabilidade e o crescimento do negócio.</p>
     </div>
-    <div class="card">
+    <div class="service-box">
       <h3>Gestão Empresarial</h3>
-      <p>Serviços de apoio à administração, análise de indicadores, melhoria de processos internos e suporte na tomada de decisões.</p>
+      <p>Apoio à gestão, controlo orçamental, melhoria de processos e definição de estratégias de crescimento e eficiência.</p>
     </div>
-    <div class="card">
+    <div class="service-box">
       <h3>Recursos Humanos</h3>
-      <p>Processamento salarial, gestão contratual e contributiva, apoio na legislação laboral e comunicação com entidades oficiais.</p>
+      <p>Processamento salarial, gestão de contratos e contribuições, apoio jurídico-laboral e acompanhamento legal permanente.</p>
     </div>
-    <div class="card">
+    <div class="service-box">
       <h3>Serviços Administrativos</h3>
-      <p>Gestão de faturação, tesouraria, arquivo e documentação, garantindo que as rotinas administrativas são simples e eficientes.</p>
+      <p>Gestão documental, faturação, tesouraria e suporte administrativo, permitindo ao cliente focar-se no essencial — o seu negócio.</p>
     </div>
-    <div class="card">
+    <div class="service-box">
       <h3>Criação de Empresas</h3>
-      <p>Apoio integral no processo de constituição: forma jurídica, enquadramento fiscal, registo e implementação de sistemas administrativos.</p>
+      <p>Apoio integral desde o planeamento e registo até à implementação dos processos financeiros e administrativos.</p>
     </div>
   </div>
-
-  <p class="services-intro" style="margin-top: 30px;">
-    Prestamos serviços em <strong>Portugal Continental</strong> e internacionalmente.  
-    Recolhemos documentação nas instalações dos clientes e realizamos reuniões presenciais nas nossas salas em várias cidades.
-  </p>
 </section>
 
 <!-- CONTACTOS -->
 <section id="contactos">
-  <h2>Contactos</h2>
-  <div class="contact-container">
-    <div class="contact-info">
+  <div class="content-section">
+    <div class="text-block">
+      <h2>Contactos</h2>
       <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
       <p><strong>Telefone:</strong> +351 214584827</p>
       <p><strong>Email:</strong> geral@ptsgestao.pt</p>
@@ -154,8 +128,8 @@
       </form>
     </div>
 
-    <div class="contact-image">
-      <img src="assets/building_entry.jpeg" alt="Entrada do edifício PTS">
+    <div class="image-block">
+      <img src="assets/building_entry.jpeg" alt="Entrada do edifício PTS" />
     </div>
   </div>
 </section>
@@ -166,7 +140,7 @@
 
 <script src="lang.js"></script>
 <script>
-// Slideshow com transição suave (sem piscar)
+// Slideshow de fundo com fade suave
 const hero = document.getElementById('hero');
 const images = ['assets/building.jpeg', 'assets/building2.jpeg', 'assets/building3.jpeg'];
 let index = 0;
@@ -175,15 +149,17 @@ const layer1 = document.createElement('div');
 const layer2 = document.createElement('div');
 
 [layer1, layer2].forEach(layer => {
-  layer.style.position = 'absolute';
-  layer.style.top = 0;
-  layer.style.left = 0;
-  layer.style.width = '100%';
-  layer.style.height = '100%';
-  layer.style.backgroundSize = 'cover';
-  layer.style.backgroundPosition = 'center';
-  layer.style.transition = 'opacity 1.5s ease-in-out';
-  layer.style.zIndex = 0;
+  Object.assign(layer.style, {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: 'opacity 1.5s ease-in-out',
+    zIndex: 0,
+  });
 });
 
 layer1.style.backgroundImage = `url('${images[0]}')`;
@@ -194,18 +170,15 @@ hero.prepend(layer1);
 hero.prepend(layer2);
 
 function changeBackground() {
-  const nextIndex = (index + 1) % images.length;
+  const next = (index + 1) % images.length;
   const visible = index % 2 === 0 ? layer1 : layer2;
   const hidden = index % 2 === 0 ? layer2 : layer1;
-
-  hidden.style.backgroundImage = `url('${images[nextIndex]}')`;
+  hidden.style.backgroundImage = `url('${images[next]}')`;
   hidden.style.opacity = 1;
   visible.style.opacity = 0;
-
-  index = nextIndex;
+  index = next;
 }
 setInterval(changeBackground, 4000);
 </script>
-
 </body>
 </html>
