@@ -1,114 +1,159 @@
-<style>
-  /* Logo e título lado a lado */
-  .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    justify-content: center;
-    position: relative;
-    z-index: 3;
-  }
-  .logo {
-    width: 70px;
-    height: auto;
-    filter: brightness(0) invert(1); /* mantém o logo branco */
-  }
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PTS Lda. - Contabilidade</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Apenas estilos críticos da capa para garantir que nada volta a “piscar” ou sobrepor */
+    .logo-title{display:flex;align-items:center;gap:12px;justify-content:center;position:relative;z-index:3}
+    .logo{width:70px;height:auto;filter:brightness(0) invert(1)} /* logo branco como querias */
 
-  /* HERO */
-  .hero {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    color: white;
-  }
-  .hero .overlay {
-    background: rgba(0, 0, 0, 0.55);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px;
-    position: relative;
-    z-index: 2; /* o texto fica acima das imagens */
-  }
+    .hero{position:relative;overflow:hidden;height:100vh;color:#fff}
+    .hero .overlay{
+      position:relative;z-index:2;
+      background:rgba(0,0,0,.55);
+      height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;
+    }
 
-  /* Botões de idioma e menu */
-  .lang-switch {
-    margin: 15px 0;
-  }
-  .lang-switch button {
-    background: white;
-    color: #004080;
-    border: none;
-    padding: 8px 14px;
-    margin: 0 5px;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: 0.3s;
-  }
-  .lang-switch button:hover {
-    background: #004080;
-    color: white;
-  }
-  nav a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-  }
-  nav a:hover {
-    color: #e6b800;
-  }
+    /* camadas do slideshow (sempre por trás do overlay) */
+    .hero-bg-layer{
+      position:absolute;inset:0;background-size:cover;background-position:center;
+      opacity:0;transition:opacity 1.6s ease-in-out;z-index:0;pointer-events:none;
+    }
+    .hero-bg-layer.active{opacity:1}
+  </style>
+</head>
+<body>
 
-  /* Camadas do slideshow */
-  .hero-bg-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.8s ease-in-out;
-    z-index: 0;
-  }
-  .hero-bg-layer.active {
-    opacity: 1;
-  }
-</style>
+<header class="hero" id="hero">
+  <div class="overlay">
+    <div class="logo-title">
+      <img src="logo1.png" alt="Logo PTS" class="logo" />
+      <h1 id="title">PTS Lda.</h1>
+    </div>
+    <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
 
+    <div class="lang-switch">
+      <button onclick="setLang('pt')">PT</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+
+    <nav>
+      <a href="#sobre" id="menu-about">Sobre Nós</a>
+      <a href="#servicos" id="menu-services">Serviços</a>
+      <a href="#contactos" id="menu-contact">Contactos</a>
+    </nav>
+  </div>
+</header>
+
+<!-- SOBRE NÓS (mantido) -->
+<section id="sobre">
+  <h2 id="about-title">Sobre Nós</h2>
+  <div class="about-container">
+    <img src="office.jpeg" alt="Escritório PTS" />
+    <p id="about-text">
+      A PTS Lda. é uma empresa de contabilidade com mais de 20 anos de experiência,
+      especializada em apoiar empresas e particulares na gestão fiscal, financeira e estratégica.
+      Apostamos na confiança, proximidade e rigor, acompanhando os nossos clientes em todas as etapas do negócio.
+    </p>
+  </div>
+</section>
+
+<!-- SERVIÇOS (centrados e corporativos; sem emojis) -->
+<section id="servicos">
+  <h2 id="services-title">Serviços</h2>
+
+  <!-- intro breve (não é mexida pelo lang.js) -->
+  <p class="services-intro">
+    Entregue a contabilidade da sua empresa a profissionais competentes, com suporte técnico dedicado —
+    essencial ao desenvolvimento e bom funcionamento do seu negócio.
+  </p>
+
+  <!-- mantém o id=services-list para compatibilidade com o teu lang.js -->
+  <div class="services-grid center" id="services-list">
+    <div class="card">Contabilidade e Fiscalidade</div>
+    <div class="card">Consultoria Financeira</div>
+    <div class="card">Gestão Empresarial</div>
+    <div class="card">Apoio em IVA e Obrigações Fiscais</div>
+    <div class="card">Criação de Empresas</div>
+  </div>
+</section>
+
+<!-- CONTACTOS (refeito em 2 colunas, limpo) -->
+<section id="contactos">
+  <h2 id="contact-title">Contactos</h2>
+
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="contact-block">
+        <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
+        <p><strong>Telefone:</strong> +351 214584827</p>
+        <p><strong>Email:</strong> geral@ptsgestao.pt</p>
+      </div>
+
+      <h3 id="form-title">Envie-nos uma mensagem</h3>
+      <form action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain" class="contact-form">
+        <label for="name" id="label-name">Nome</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email" id="label-email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="topic" id="label-topic">Assunto</label>
+        <select id="topic" name="topic">
+          <option value="novo">Novo Cliente</option>
+          <option value="empresa">Nova Empresa</option>
+          <option value="consultas">Consultas Financeiras</option>
+          <option value="iva">Sobre IVA</option>
+          <option value="gestao">Sobre Gestão</option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <label for="message" id="label-message">Mensagem</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit" id="btn-send">Enviar</button>
+      </form>
+    </div>
+
+    <div class="contact-right">
+      <img src="building_entry.jpeg" alt="Entrada do edifício PTS" />
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p id="footer-text">© 2025 PTS Lda. - Todos os direitos reservados.</p>
+</footer>
+
+<script src="lang.js"></script>
 <script>
-// --- Slideshow com fade contínuo e suave ---
+/* CAPA — slideshow suave, texto SEMPRE por cima */
 const hero = document.getElementById('hero');
 const images = ['building.jpeg', 'building2.jpeg', 'building3.jpeg'];
-let index = 0;
+let i = 0;
 
-// Criar as camadas (2 para o fade)
-const layerA = document.createElement('div');
-const layerB = document.createElement('div');
-layerA.className = 'hero-bg-layer active';
-layerB.className = 'hero-bg-layer';
-hero.prepend(layerB);
-hero.prepend(layerA);
+// criar 2 camadas
+const L1 = document.createElement('div');
+const L2 = document.createElement('div');
+L1.className = 'hero-bg-layer active';
+L2.className = 'hero-bg-layer';
+L1.style.backgroundImage = `url('${images[0]}')`;
+hero.prepend(L2); hero.prepend(L1);
 
-layerA.style.backgroundImage = `url('${images[0]}')`;
+function nextSlide() {
+  const next = (i + 1) % images.length;
+  const active = L1.classList.contains('active') ? L1 : L2;
+  const idle   = active === L1 ? L2 : L1;
 
-function changeBackground() {
-  const next = (index + 1) % images.length;
-  const active = layerA.classList.contains('active') ? layerA : layerB;
-  const inactive = active === layerA ? layerB : layerA;
-
-  inactive.style.backgroundImage = `url('${images[next]}')`;
-  inactive.classList.add('active');
+  idle.style.backgroundImage = `url('${images[next]}')`;
+  idle.classList.add('active');
   active.classList.remove('active');
-  index = next;
+  i = next;
 }
-
-// Troca suave a cada 5s
-setInterval(changeBackground, 5000);
+setInterval(nextSlide, 4000);
 </script>
+</body>
+</html>
