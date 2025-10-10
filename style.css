@@ -1,144 +1,160 @@
-/* Paleta corporativa discreta (azul profundo / cinzas) */
-:root{
-  --ink:#0f2540;
-  --ink-2:#1d3557;
-  --bg:#f5f7fa;
-  --line:#e3e7ee;
-  --text:#2a2f36;
-  --accent:#b88e2f; /* dourado subtil, só para hover/realce */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #333;
 }
 
-/* BASE */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
-  color:var(--text);
-  background:var(--bg);
-  line-height:1.6;
+/* LOGO */
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  width: 70px;
+  height: auto;
+  filter: brightness(0) invert(1); /* manter logo branco */
 }
 
-/* HERO (o posicionamento e layers estão no <style> do HTML para não conflitar) */
-.hero h1{font-size:3rem;margin:.2em 0 .4em 0}
-.hero p{font-size:1.15rem;max-width:760px;margin:0 auto 20px}
-.lang-switch{margin:10px 0 18px}
-.lang-switch button{
-  background:#fff;color:var(--ink);border:1px solid rgba(255,255,255,.25);
-  padding:8px 14px;margin:0 6px;cursor:pointer;font-weight:600;border-radius:3px;transition:.25s;
+/* HERO (resto da capa está no <style> do HTML) */
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
 }
-.lang-switch button:hover{background:var(--ink);color:#fff;border-color:transparent}
-nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;transition:.25s}
-nav a:hover{color:var(--accent)}
+.hero p {
+  font-size: 1.2rem;
+  margin: 10px 0 20px;
+}
+.lang-switch {
+  margin: 10px;
+}
+.lang-switch button {
+  background: white;
+  color: #004080;
+  border: none;
+  margin: 0 5px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-/* SEÇÕES GENÉRICAS */
-section{
-  max-width:1200px;
-  margin:80px auto;
-  padding:60px 24px;
-  background:#fff;
-  border:1px solid var(--line);
+/* SEÇÕES */
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-h2{
-  margin:0 0 22px 0;
-  color:var(--ink);
-  font-size:1.8rem;
-  letter-spacing:.2px;
+h2 {
+  color: #004080;
+  margin-bottom: 20px;
 }
 
 /* SOBRE NÓS */
-.about-container{
-  display:grid;
-  grid-template-columns:1.1fr 1fr;
-  gap:36px;
-  align-items:center;
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.about-container img{
-  width:100%;
-  display:block;
-  border:1px solid var(--line);
+.about-container img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 8px;
 }
-@media (max-width: 900px){
-  .about-container{grid-template-columns:1fr}
+.about-container p {
+  flex: 2;
+  line-height: 1.6;
 }
 
-/* SERVIÇOS */
-#servicos{text-align:center}
-.services-intro{
-  max-width:860px;margin:0 auto 26px;color:#444
+/* SERVIÇOS (centrado e com descrições) */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra a grelha */
+  gap: 20px;
 }
-.services-grid{
-  --col: 220px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(var(--col), 1fr));
-  gap:18px;
-  max-width:900px;
-  margin:0 auto; /* centra a grelha */
+.card {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 300px;               /* mais largo para caber a descrição */
+  min-height: 150px;
 }
-.services-grid.center{justify-items:stretch}
-.card{
-  border:1px solid var(--line);
-  padding:18px 16px;
-  background:#fafbfd;
-  text-align:center;
-  font-weight:600;
-  letter-spacing:.2px;
-  transition:background .25s, transform .25s, border-color .25s;
+.card h3 {
+  margin: 0 0 8px 0;
+  color: #0b3d91;
+  font-weight: 700;
 }
-.card:hover{
-  background:#f1f4f9;
-  transform:translateY(-2px);
-  border-color:#d7dce6;
+.card p {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
 }
 
 /* CONTACTOS */
-#contactos{text-align:left}
-#contact-title{text-align:center;margin-bottom:28px}
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:36px;
-  align-items:start;
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
 }
-.contact-left .contact-block{
-  border:1px solid var(--line);
-  padding:16px;
-  margin-bottom:16px;
-  background:#fafbfd;
+.contact-info {
+  flex: 1;
+  min-width: 300px;
 }
-.contact-right img{
-  width:100%;display:block;border:1px solid var(--line);
+.contact-image {
+  flex: 1;
+  min-width: 300px;
 }
-@media (max-width: 900px){
-  .contact-grid{grid-template-columns:1fr}
+.contact-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* FORMULÁRIO (reto, sem “redondinhos”) */
-.contact-form label{display:block;font-weight:600;margin-top:14px;color:var(--ink)}
-.contact-form input,
-.contact-form select,
-.contact-form textarea{
-  width:100%;padding:10px;border:1px solid #cfd6e3;background:#fff;border-radius:2px;margin-top:6px;
-  font-size:1rem;outline:none;transition:border-color .2s, box-shadow .2s;
+/* FORMULÁRIO */
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus{
-  border-color:#98a7c2;box-shadow:0 0 0 2px rgba(152,167,194,.2);
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-.contact-form button{
-  margin-top:18px;
-  background:var(--ink);color:#fff;border:1px solid var(--ink);
-  padding:11px 24px;font-weight:700;cursor:pointer;border-radius:2px;
-  letter-spacing:.3px;transition:background .2s,border-color .2s, transform .1s;
+form button {
+  margin-top: 15px;
+  background: #004080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
-.contact-form button:hover{background:var(--ink-2);border-color:var(--ink-2)}
-.contact-form button:active{transform:translateY(1px)}
 
-/* RODAPÉ */
-footer{
-  background:var(--ink);
-  color:#fff;
-  text-align:center;
-  padding:24px 16px;
-  border-top:1px solid #0b1d34;
+/* FOOTER */
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
 }
