@@ -1,27 +1,16 @@
 :root {
-  --primary: #003366;
-  --secondary: #0059b3;
-  --accent: #0073e6;
-  --light: #f8f9fa;
+  --primary: #0d274d;
+  --secondary: #1a3c6d;
+  --accent: #e6b800;
+  --light: #f4f6f9;
   --text: #333;
 }
 
-/* GERAL */
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  padding: 0;
   color: var(--text);
   background-color: var(--light);
-  line-height: 1.6;
-}
-h1, h2, h3 {
-  color: var(--primary);
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-p {
-  font-size: 1.05rem;
 }
 
 /* HERO */
@@ -42,16 +31,13 @@ p {
   padding: 40px;
 }
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 0.4em;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
 }
 .hero p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 20px;
-}
-.lang-switch {
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin: 10px auto 25px;
 }
 .lang-switch button {
   background: white;
@@ -59,9 +45,9 @@ p {
   border: none;
   padding: 8px 14px;
   margin: 0 5px;
-  border-radius: 5px;
   cursor: pointer;
   font-weight: 600;
+  border-radius: 4px;
   transition: 0.3s;
 }
 .lang-switch button:hover {
@@ -70,10 +56,10 @@ p {
 }
 nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 nav a:hover {
   color: var(--accent);
@@ -85,82 +71,91 @@ section {
   margin: 80px auto;
   padding: 60px 20px;
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e3e7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* SOBRE NÓS */
-.content-section {
+/* SOBRE */
+.about-container {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
 }
-.text-block {
-  flex: 1.2;
-}
-.image-block {
+.about-container img {
   flex: 1;
+  max-width: 500px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
-.image-block img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+.about-container div {
+  flex: 1.2;
 }
 
 /* SERVIÇOS */
 #servicos {
   text-align: center;
 }
-.section-intro {
-  max-width: 900px;
+.services-intro {
+  max-width: 850px;
   margin: 0 auto 40px;
+  font-size: 1.05rem;
+  color: #555;
 }
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 30px;
+  justify-items: center;
 }
-.service-box {
-  background: var(--light);
-  border: 1px solid #dfe3e8;
-  border-radius: 10px;
+.service {
+  background: #fafafa;
+  border: 1px solid #dce2ea;
   padding: 30px 25px;
+  width: 90%;
   text-align: left;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
-.service-box:hover {
+.service:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-.service-box h3 {
+.service h3 {
   color: var(--secondary);
   margin-bottom: 10px;
 }
-.service-box:hover h3 {
+.service:hover h3 {
   color: white;
 }
 
 /* CONTACTOS */
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: flex-start;
+}
+.contact-left {
+  flex: 1;
+  min-width: 320px;
+}
+.contact-right img {
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* FORMULÁRIO */
 form label {
   display: block;
   font-weight: 600;
   margin-top: 15px;
-  color: var(--primary);
 }
 form input, form select, form textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
   margin-top: 5px;
   font-size: 1rem;
-}
-form input:focus, form select:focus, form textarea:focus {
-  border-color: var(--accent);
-  outline: none;
 }
 form button {
   margin-top: 20px;
@@ -168,9 +163,8 @@ form button {
   color: white;
   border: none;
   padding: 12px 30px;
-  border-radius: 6px;
-  cursor: pointer;
   font-weight: 600;
+  cursor: pointer;
   transition: 0.3s;
 }
 form button:hover {
@@ -184,14 +178,12 @@ footer {
   text-align: center;
   padding: 25px;
   font-size: 0.95rem;
-  margin-top: 40px;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .content-section {
+  .about-container, .contact-flex {
     flex-direction: column;
   }
-  .hero h1 { font-size: 2.3rem; }
-  .hero p { font-size: 1rem; }
+  .hero h1 { font-size: 2.5rem; }
 }
