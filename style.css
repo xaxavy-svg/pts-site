@@ -1,6 +1,3 @@
-/* ============================
-   ESTILOS GERAIS
-============================ */
 :root {
   --primary: #003366;
   --secondary: #0059b3;
@@ -25,20 +22,13 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-p {
-  font-size: 1rem;
-}
-
-/* ============================
-   HERO / BANNER
-============================ */
+/* HERO */
 .hero {
   position: relative;
   overflow: hidden;
   height: 100vh;
   color: white;
 }
-
 .hero .overlay {
   background: rgba(0, 0, 0, 0.55);
   position: relative;
@@ -51,24 +41,22 @@ p {
   text-align: center;
   padding: 40px;
 }
-
 .hero h1 {
   font-size: 3.2rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0.3em;
 }
-
 .hero p {
   font-size: 1.3rem;
   max-width: 700px;
   margin: 10px auto 30px;
 }
 
+/* MENU */
 .lang-switch {
   margin-bottom: 20px;
 }
-
 .lang-switch button {
   background: white;
   color: var(--primary);
@@ -80,32 +68,26 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .lang-switch button:hover {
   background: var(--accent);
   color: white;
 }
-
 nav {
   display: flex;
   gap: 20px;
   margin-top: 10px;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
 }
-
 nav a:hover {
   color: var(--accent);
 }
 
-/* ============================
-   SOBRE NÓS
-============================ */
+/* SEÇÕES */
 section {
   max-width: 1200px;
   margin: 60px auto;
@@ -115,108 +97,76 @@ section {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-#sobre .about-container {
+/* SOBRE NÓS */
+.about-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 40px;
 }
-
-#sobre img {
+.about-container img {
   flex: 1;
   max-width: 500px;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
-
-#sobre p {
+.about-container p {
   flex: 2;
   font-size: 1.05rem;
   color: var(--dark);
 }
 
-/* ============================
-   SERVIÇOS
-============================ */
+/* SERVIÇOS */
 #servicos h2 {
   text-align: center;
   margin-bottom: 20px;
 }
-
+.services-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  color: var(--dark);
+}
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  margin-top: 30px;
 }
-
 .card {
   background: var(--light);
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   padding: 30px 20px;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease;
 }
-
 .card:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-
 .card h3 {
-  margin-bottom: 10px;
   color: var(--secondary);
+  margin-bottom: 10px;
 }
-
 .card:hover h3 {
   color: white;
 }
 
-/* ============================
-   CONTACTOS
-============================ */
-#contactos h2 {
-  text-align: center;
-}
-
-.contact-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
-.contact-info {
-  flex: 1;
-  min-width: 320px;
-}
-
-.contact-image {
-  flex: 1;
-  min-width: 320px;
-}
-
+/* CONTACTOS */
 .contact-image img {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
 form label {
   display: block;
   font-weight: bold;
   margin-top: 15px;
   color: var(--primary);
 }
-
-form input,
-form select,
-form textarea {
+form input, form select, form textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -225,14 +175,10 @@ form textarea {
   font-size: 1rem;
   transition: border 0.3s ease;
 }
-
-form input:focus,
-form select:focus,
-form textarea:focus {
+form input:focus, form select:focus, form textarea:focus {
   border-color: var(--accent);
   outline: none;
 }
-
 form button {
   margin-top: 20px;
   background: var(--primary);
@@ -244,14 +190,11 @@ form button {
   font-weight: bold;
   transition: all 0.3s ease;
 }
-
 form button:hover {
   background: var(--accent);
 }
 
-/* ============================
-   FOOTER
-============================ */
+/* FOOTER */
 footer {
   background: var(--primary);
   color: white;
@@ -260,21 +203,10 @@ footer {
   font-size: 0.95rem;
 }
 
-/* ============================
-   RESPONSIVO
-============================ */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.3rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #sobre .about-container {
-    flex-direction: column;
-  }
+  .hero h1 { font-size: 2.3rem; }
+  .hero p { font-size: 1rem; }
+  nav { flex-wrap: wrap; justify-content: center; }
+  .about-container { flex-direction: column; }
 }
