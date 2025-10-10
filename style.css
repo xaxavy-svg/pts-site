@@ -1,159 +1,144 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PTS Lda. - Contabilidade</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Apenas estilos críticos da capa para garantir que nada volta a “piscar” ou sobrepor */
-    .logo-title{display:flex;align-items:center;gap:12px;justify-content:center;position:relative;z-index:3}
-    .logo{width:70px;height:auto;filter:brightness(0) invert(1)} /* logo branco como querias */
-
-    .hero{position:relative;overflow:hidden;height:100vh;color:#fff}
-    .hero .overlay{
-      position:relative;z-index:2;
-      background:rgba(0,0,0,.55);
-      height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;
-    }
-
-    /* camadas do slideshow (sempre por trás do overlay) */
-    .hero-bg-layer{
-      position:absolute;inset:0;background-size:cover;background-position:center;
-      opacity:0;transition:opacity 1.6s ease-in-out;z-index:0;pointer-events:none;
-    }
-    .hero-bg-layer.active{opacity:1}
-  </style>
-</head>
-<body>
-
-<header class="hero" id="hero">
-  <div class="overlay">
-    <div class="logo-title">
-      <img src="logo1.png" alt="Logo PTS" class="logo" />
-      <h1 id="title">PTS Lda.</h1>
-    </div>
-    <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
-
-    <div class="lang-switch">
-      <button onclick="setLang('pt')">PT</button>
-      <button onclick="setLang('en')">EN</button>
-    </div>
-
-    <nav>
-      <a href="#sobre" id="menu-about">Sobre Nós</a>
-      <a href="#servicos" id="menu-services">Serviços</a>
-      <a href="#contactos" id="menu-contact">Contactos</a>
-    </nav>
-  </div>
-</header>
-
-<!-- SOBRE NÓS (mantido) -->
-<section id="sobre">
-  <h2 id="about-title">Sobre Nós</h2>
-  <div class="about-container">
-    <img src="office.jpeg" alt="Escritório PTS" />
-    <p id="about-text">
-      A PTS Lda. é uma empresa de contabilidade com mais de 20 anos de experiência,
-      especializada em apoiar empresas e particulares na gestão fiscal, financeira e estratégica.
-      Apostamos na confiança, proximidade e rigor, acompanhando os nossos clientes em todas as etapas do negócio.
-    </p>
-  </div>
-</section>
-
-<!-- SERVIÇOS (centrados e corporativos; sem emojis) -->
-<section id="servicos">
-  <h2 id="services-title">Serviços</h2>
-
-  <!-- intro breve (não é mexida pelo lang.js) -->
-  <p class="services-intro">
-    Entregue a contabilidade da sua empresa a profissionais competentes, com suporte técnico dedicado —
-    essencial ao desenvolvimento e bom funcionamento do seu negócio.
-  </p>
-
-  <!-- mantém o id=services-list para compatibilidade com o teu lang.js -->
-  <div class="services-grid center" id="services-list">
-    <div class="card">Contabilidade e Fiscalidade</div>
-    <div class="card">Consultoria Financeira</div>
-    <div class="card">Gestão Empresarial</div>
-    <div class="card">Apoio em IVA e Obrigações Fiscais</div>
-    <div class="card">Criação de Empresas</div>
-  </div>
-</section>
-
-<!-- CONTACTOS (refeito em 2 colunas, limpo) -->
-<section id="contactos">
-  <h2 id="contact-title">Contactos</h2>
-
-  <div class="contact-grid">
-    <div class="contact-left">
-      <div class="contact-block">
-        <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
-        <p><strong>Telefone:</strong> +351 214584827</p>
-        <p><strong>Email:</strong> geral@ptsgestao.pt</p>
-      </div>
-
-      <h3 id="form-title">Envie-nos uma mensagem</h3>
-      <form action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain" class="contact-form">
-        <label for="name" id="label-name">Nome</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email" id="label-email">Email</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="topic" id="label-topic">Assunto</label>
-        <select id="topic" name="topic">
-          <option value="novo">Novo Cliente</option>
-          <option value="empresa">Nova Empresa</option>
-          <option value="consultas">Consultas Financeiras</option>
-          <option value="iva">Sobre IVA</option>
-          <option value="gestao">Sobre Gestão</option>
-          <option value="outro">Outro</option>
-        </select>
-
-        <label for="message" id="label-message">Mensagem</label>
-        <textarea id="message" name="message" rows="5"></textarea>
-
-        <button type="submit" id="btn-send">Enviar</button>
-      </form>
-    </div>
-
-    <div class="contact-right">
-      <img src="building_entry.jpeg" alt="Entrada do edifício PTS" />
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p id="footer-text">© 2025 PTS Lda. - Todos os direitos reservados.</p>
-</footer>
-
-<script src="lang.js"></script>
-<script>
-/* CAPA — slideshow suave, texto SEMPRE por cima */
-const hero = document.getElementById('hero');
-const images = ['building.jpeg', 'building2.jpeg', 'building3.jpeg'];
-let i = 0;
-
-// criar 2 camadas
-const L1 = document.createElement('div');
-const L2 = document.createElement('div');
-L1.className = 'hero-bg-layer active';
-L2.className = 'hero-bg-layer';
-L1.style.backgroundImage = `url('${images[0]}')`;
-hero.prepend(L2); hero.prepend(L1);
-
-function nextSlide() {
-  const next = (i + 1) % images.length;
-  const active = L1.classList.contains('active') ? L1 : L2;
-  const idle   = active === L1 ? L2 : L1;
-
-  idle.style.backgroundImage = `url('${images[next]}')`;
-  idle.classList.add('active');
-  active.classList.remove('active');
-  i = next;
+/* Paleta corporativa discreta (azul profundo / cinzas) */
+:root{
+  --ink:#0f2540;
+  --ink-2:#1d3557;
+  --bg:#f5f7fa;
+  --line:#e3e7ee;
+  --text:#2a2f36;
+  --accent:#b88e2f; /* dourado subtil, só para hover/realce */
 }
-setInterval(nextSlide, 4000);
-</script>
-</body>
-</html>
+
+/* BASE */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+/* HERO (o posicionamento e layers estão no <style> do HTML para não conflitar) */
+.hero h1{font-size:3rem;margin:.2em 0 .4em 0}
+.hero p{font-size:1.15rem;max-width:760px;margin:0 auto 20px}
+.lang-switch{margin:10px 0 18px}
+.lang-switch button{
+  background:#fff;color:var(--ink);border:1px solid rgba(255,255,255,.25);
+  padding:8px 14px;margin:0 6px;cursor:pointer;font-weight:600;border-radius:3px;transition:.25s;
+}
+.lang-switch button:hover{background:var(--ink);color:#fff;border-color:transparent}
+nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600;transition:.25s}
+nav a:hover{color:var(--accent)}
+
+/* SEÇÕES GENÉRICAS */
+section{
+  max-width:1200px;
+  margin:80px auto;
+  padding:60px 24px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+h2{
+  margin:0 0 22px 0;
+  color:var(--ink);
+  font-size:1.8rem;
+  letter-spacing:.2px;
+}
+
+/* SOBRE NÓS */
+.about-container{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:36px;
+  align-items:center;
+}
+.about-container img{
+  width:100%;
+  display:block;
+  border:1px solid var(--line);
+}
+@media (max-width: 900px){
+  .about-container{grid-template-columns:1fr}
+}
+
+/* SERVIÇOS */
+#servicos{text-align:center}
+.services-intro{
+  max-width:860px;margin:0 auto 26px;color:#444
+}
+.services-grid{
+  --col: 220px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(var(--col), 1fr));
+  gap:18px;
+  max-width:900px;
+  margin:0 auto; /* centra a grelha */
+}
+.services-grid.center{justify-items:stretch}
+.card{
+  border:1px solid var(--line);
+  padding:18px 16px;
+  background:#fafbfd;
+  text-align:center;
+  font-weight:600;
+  letter-spacing:.2px;
+  transition:background .25s, transform .25s, border-color .25s;
+}
+.card:hover{
+  background:#f1f4f9;
+  transform:translateY(-2px);
+  border-color:#d7dce6;
+}
+
+/* CONTACTOS */
+#contactos{text-align:left}
+#contact-title{text-align:center;margin-bottom:28px}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:36px;
+  align-items:start;
+}
+.contact-left .contact-block{
+  border:1px solid var(--line);
+  padding:16px;
+  margin-bottom:16px;
+  background:#fafbfd;
+}
+.contact-right img{
+  width:100%;display:block;border:1px solid var(--line);
+}
+@media (max-width: 900px){
+  .contact-grid{grid-template-columns:1fr}
+}
+
+/* FORMULÁRIO (reto, sem “redondinhos”) */
+.contact-form label{display:block;font-weight:600;margin-top:14px;color:var(--ink)}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;padding:10px;border:1px solid #cfd6e3;background:#fff;border-radius:2px;margin-top:6px;
+  font-size:1rem;outline:none;transition:border-color .2s, box-shadow .2s;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{
+  border-color:#98a7c2;box-shadow:0 0 0 2px rgba(152,167,194,.2);
+}
+.contact-form button{
+  margin-top:18px;
+  background:var(--ink);color:#fff;border:1px solid var(--ink);
+  padding:11px 24px;font-weight:700;cursor:pointer;border-radius:2px;
+  letter-spacing:.3px;transition:background .2s,border-color .2s, transform .1s;
+}
+.contact-form button:hover{background:var(--ink-2);border-color:var(--ink-2)}
+.contact-form button:active{transform:translateY(1px)}
+
+/* RODAPÉ */
+footer{
+  background:var(--ink);
+  color:#fff;
+  text-align:center;
+  padding:24px 16px;
+  border-top:1px solid #0b1d34;
+}
