@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PTS Lda. - Contabilidade</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* Complemento leve ao teu CSS principal */
-    .logo-title{display:flex;align-items:center;gap:12px;justify-content:center}
-    .logo{width:70px;height:auto;filter:brightness(0) invert(1)}
-    .contact-container{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;justify-content:space-between}
-    .contact-info{flex:1;min-width:300px}
-    .contact-image{flex:1;min-width:300px}
-    .contact-image img{width:100%;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,.2)}
-    /* Serviço: título e parágrafos dentro de cards */
-    .services-grid .card h3{margin:0 0 .5rem;color:#0059b3;font-weight:700}
-    .services-intro{max-width:900px;margin:0 auto 24px;color:#1a1a1a;line-height:1.6}
+    /* Ajustes rápidos para logo e contactos */
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+    .logo {
+      width: 70px;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    .contact-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .contact-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
+
 <body>
 
 <header class="hero" id="hero">
   <div class="overlay">
     <div class="logo-title">
-      <img src="logo1.png" alt="Logo PTS" class="logo" />
+      <img src="assets/logo1.png" alt="Logo PTS" class="logo">
       <h1 id="title">PTS Lda.</h1>
     </div>
-
     <p id="subtitle">20+ anos de experiência em Contabilidade e Gestão</p>
 
     <div class="lang-switch">
@@ -44,90 +66,78 @@
 
 <!-- SOBRE NÓS -->
 <section id="sobre">
-  <h2 id="about-title">Sobre Nós</h2>
+  <h2>Sobre Nós</h2>
   <div class="about-container">
-    <img src="office.jpeg" alt="Escritório PTS" />
-    <p id="about-text">
-      A <strong>PTS Lda.</strong> é um gabinete de contabilidade com mais de <strong>20 anos de experiência</strong>,
-      com escritórios em Lisboa e Oeiras. Estamos organizados para prestar um serviço de qualidade e diferenciador
-      nas áreas de <strong>contabilidade</strong>, <strong>consultoria fiscal e de gestão</strong>,
-      <strong>recursos humanos</strong> e <strong>serviços administrativos</strong>.
-      Trabalhamos de forma dinâmica, pró-ativa e moderna, fazendo uso das mais recentes tecnologias.
+    <img src="assets/office.jpeg" alt="Escritório PTS">
+    <p>
+      A <strong>PTS Lda.</strong> é um gabinete de contabilidade com mais de <strong>20 anos de experiência</strong>, com escritórios em Oeiras e Lisboa.
+      Somos uma equipa dedicada e multidisciplinar, especializada em <strong>contabilidade, consultoria fiscal e de gestão, recursos humanos e serviços administrativos</strong>.
       <br><br>
-      Um dos nossos focos principais é a <strong>relação próxima com o cliente</strong>. Respondemos com rapidez e
-      tomamos a iniciativa de sugerir melhorias para otimização fiscal. Enviamos periodicamente <em>briefings</em>
-      fiscais claros para que os nossos clientes entendam, sem complicação, o que é relevante para o seu negócio.
+      Trabalhamos de forma dinâmica e moderna, fazendo uso das tecnologias mais recentes para oferecer um serviço de excelência. Acreditamos numa relação próxima e transparente com cada cliente, respondendo de forma rápida e proativa.
+      <br><br>
+      Enviamos periodicamente informações fiscais simplificadas para garantir que os nossos clientes compreendem as mudanças legais e aproveitam todas as oportunidades fiscais disponíveis.
     </p>
   </div>
 </section>
 
 <!-- SERVIÇOS -->
 <section id="servicos">
-  <h2 id="services-title">Serviços</h2>
-
-  <p class="services-intro" id="services-intro">
-    Entregue a contabilidade da sua empresa a profissionais competentes, com suporte técnico dedicado.
-    É imprescindível para o desenvolvimento e o bom funcionamento de qualquer negócio.
-    Prestamos um serviço completo e personalizado, com rigor, confidencialidade e acompanhamento contínuo.
+  <h2>Os Nossos Serviços</h2>
+  <p class="services-intro">
+    Entregue a contabilidade da sua empresa a profissionais competentes e com suporte técnico especializado — um fator essencial para o desenvolvimento e bom funcionamento de qualquer negócio.
   </p>
 
-  <!-- Mantemos o ID 'services-list' para não partir o lang.js -->
   <div class="services-grid" id="services-list">
     <div class="card">
-      <h3>📊 Contabilidade & Fiscalidade</h3>
-      <p>Contabilidade organizada, fecho mensal e anual, demonstrações financeiras e cumprimento rigoroso de
-      prazos fiscais. Representação fiscal e apoio na relação com a AT.</p>
+      <h3>Contabilidade e Fiscalidade</h3>
+      <p>Gestão contabilística completa, cumprimento das obrigações legais e fiscais, relatórios financeiros e apoio permanente à gestão.</p>
     </div>
-
     <div class="card">
-      <h3>💼 Consultoria Fiscal & de Gestão</h3>
-      <p>Planeamento fiscal, otimização de custos, análise de indicadores e apoio à decisão.
-      Relatórios de gestão claros para conduzir o negócio com segurança.</p>
+      <h3>Consultoria Financeira</h3>
+      <p>Aconselhamento estratégico e fiscal, otimização de custos, planeamento financeiro e acompanhamento personalizado da evolução do seu negócio.</p>
     </div>
-
     <div class="card">
-      <h3>👥 Recursos Humanos</h3>
-      <p>Processamento salarial, enquadramento legal, contratos, admissões/cessações, contribuições e seguros.
-      Acompanhamento de alterações legislativas e comunicação com entidades.</p>
+      <h3>Gestão Empresarial</h3>
+      <p>Serviços de apoio à administração, análise de indicadores, melhoria de processos internos e suporte na tomada de decisões.</p>
     </div>
-
     <div class="card">
-      <h3>🗂️ Serviços Administrativos</h3>
-      <p>Gestão documental, faturação, reconciliações, tesouraria e suporte de backoffice para libertar a sua
-      equipa e acelerar operações.</p>
+      <h3>Recursos Humanos</h3>
+      <p>Processamento salarial, gestão contratual e contributiva, apoio na legislação laboral e comunicação com entidades oficiais.</p>
     </div>
-
     <div class="card">
-      <h3>🚀 Criação de Empresas</h3>
-      <p>Apoio de A a Z: forma jurídica, registo, enquadramentos fiscais e implementação de processos
-      contabilísticos e administrativos desde o primeiro dia.</p>
+      <h3>Serviços Administrativos</h3>
+      <p>Gestão de faturação, tesouraria, arquivo e documentação, garantindo que as rotinas administrativas são simples e eficientes.</p>
+    </div>
+    <div class="card">
+      <h3>Criação de Empresas</h3>
+      <p>Apoio integral no processo de constituição: forma jurídica, enquadramento fiscal, registo e implementação de sistemas administrativos.</p>
     </div>
   </div>
 
-  <p class="services-intro" style="margin-top:24px">
-    Atuamos em <strong>Portugal Continental</strong> e também <strong>internacionalmente</strong>.
-    Recolhemos documentação nas suas instalações e disponibilizamos salas para reuniões presenciais, sempre que necessário.
+  <p class="services-intro" style="margin-top: 30px;">
+    Prestamos serviços em <strong>Portugal Continental</strong> e internacionalmente.  
+    Recolhemos documentação nas instalações dos clientes e realizamos reuniões presenciais nas nossas salas em várias cidades.
   </p>
 </section>
 
 <!-- CONTACTOS -->
 <section id="contactos">
-  <h2 id="contact-title">Contactos</h2>
+  <h2>Contactos</h2>
   <div class="contact-container">
     <div class="contact-info">
       <p><strong>Morada:</strong> Rua Quinta das Palmeiras 91, 1ºA Torre Madrid, 2784-514 Oeiras, Portugal</p>
       <p><strong>Telefone:</strong> +351 214584827</p>
       <p><strong>Email:</strong> geral@ptsgestao.pt</p>
 
-      <h3 id="form-title">Envie-nos uma mensagem</h3>
+      <h3>Envie-nos uma mensagem</h3>
       <form action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain">
-        <label for="name" id="label-name">Nome:</label>
-        <input type="text" id="name" name="name" required />
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
 
-        <label for="email" id="label-email">Email:</label>
-        <input type="email" id="email" name="email" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label for="topic" id="label-topic">Assunto:</label>
+        <label for="topic">Assunto:</label>
         <select id="topic" name="topic">
           <option value="novo">Novo Cliente</option>
           <option value="empresa">Nova Empresa</option>
@@ -137,31 +147,30 @@
           <option value="outro">Outro</option>
         </select>
 
-        <label for="message" id="label-message">Mensagem:</label>
+        <label for="message">Mensagem:</label>
         <textarea id="message" name="message" rows="5"></textarea>
 
-        <button type="submit" id="btn-send">Enviar</button>
+        <button type="submit">Enviar</button>
       </form>
     </div>
 
     <div class="contact-image">
-      <img src="building_entry.jpeg" alt="Entrada do edifício PTS" />
+      <img src="assets/building_entry.jpeg" alt="Entrada do edifício PTS">
     </div>
   </div>
 </section>
 
 <footer>
-  <p id="footer-text">© 2025 PTS Lda. - Todos os direitos reservados.</p>
+  <p>© 2025 PTS Lda. - Todos os direitos reservados.</p>
 </footer>
 
 <script src="lang.js"></script>
 <script>
-/* Slideshow com fade real (sem “flash” branco) */
+// Slideshow com transição suave (sem piscar)
 const hero = document.getElementById('hero');
-const images = ['building.jpeg', 'building2.jpeg', 'building3.jpeg'];
+const images = ['assets/building.jpeg', 'assets/building2.jpeg', 'assets/building3.jpeg'];
 let index = 0;
 
-// duas camadas para cross-fade
 const layer1 = document.createElement('div');
 const layer2 = document.createElement('div');
 
@@ -173,7 +182,7 @@ const layer2 = document.createElement('div');
   layer.style.height = '100%';
   layer.style.backgroundSize = 'cover';
   layer.style.backgroundPosition = 'center';
-  layer.style.transition = 'opacity 1s ease-in-out';
+  layer.style.transition = 'opacity 1.5s ease-in-out';
   layer.style.zIndex = 0;
 });
 
@@ -187,7 +196,7 @@ hero.prepend(layer2);
 function changeBackground() {
   const nextIndex = (index + 1) % images.length;
   const visible = index % 2 === 0 ? layer1 : layer2;
-  const hidden  = index % 2 === 0 ? layer2 : layer1;
+  const hidden = index % 2 === 0 ? layer2 : layer1;
 
   hidden.style.backgroundImage = `url('${images[nextIndex]}')`;
   hidden.style.opacity = 1;
@@ -195,7 +204,8 @@ function changeBackground() {
 
   index = nextIndex;
 }
-setInterval(changeBackground, 3000); // troca a cada 3s (como pediste)
+setInterval(changeBackground, 4000);
 </script>
+
 </body>
 </html>
