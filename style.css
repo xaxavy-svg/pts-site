@@ -1,88 +1,37 @@
 :root {
-  --blue-light: #e9eff7;
-  --blue-light-2: #dbe6f2;
-  --beige: #f5efe4;
-  --beige-2: #ece4d6;
+  --blue-light: #f0f3f9;
+  --blue-alt: #e7ebf2;
+  --beige: #f6f1e8;
   --text-dark: #1e3a5f;
-  --text: #333;
 }
 
-/* Geral */
+/* ===== Base ===== */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
   background: #fafafa;
-  color: var(--text);
+  color: #333;
   line-height: 1.6;
 }
 
-/* Hero */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  color: white;
-}
-.hero-layer {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.6s ease-in-out;
-}
+/* ===== Hero ===== */
+.hero { position: relative; height: 100vh; overflow: hidden; color: white; }
+.hero-layer { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.6s ease-in-out; }
 .hero-layer.active { opacity: 1; }
-.hero-overlay {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  align-items: center;
-}
-.hero-inner {
-  margin-left: 8%;
-}
-.hero-logo {
-  width: 220px;
-  filter: brightness(0) invert(1);
-}
-.hero-title {
-  font-size: 2.8rem;
-  margin: 10px 0 5px;
-}
-.hero-sub {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
-.hero-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 15px;
-  font-weight: 600;
-}
-.lang-switch button {
-  background: white;
-  color: var(--text-dark);
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-}
+.hero-overlay { position: relative; z-index: 2; height: 100%; background: rgba(0, 0, 0, 0.55); display: flex; align-items: center; }
+.hero-inner { margin-left: 8%; }
+.hero-logo { width: 220px; filter: brightness(0) invert(1); }
+.hero-title { font-size: 2.6rem; margin: 10px 0 5px; }
+.hero-sub { font-size: 1.2rem; margin-bottom: 20px; }
+.hero-nav a { color: #fff; text-decoration: none; margin-right: 15px; font-weight: 600; }
+.lang-switch button { background: white; color: var(--text-dark); border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; }
 
-/* Strips */
-.strip {
-  padding: 80px 0;
-}
-.strip--light {
-  background: linear-gradient(to bottom, var(--beige), var(--beige-2));
-}
-.strip--alt {
-  background: linear-gradient(to bottom, var(--blue-light), var(--blue-light-2));
-}
+/* ===== Sections ===== */
+.strip { padding: 80px 0; }
+.strip--beige { background: var(--beige); }
+.strip--light { background: var(--blue-light); }
+.strip--alt { background: var(--blue-alt); }
 
-/* Section Titles */
 .section-title {
   text-align: center;
   color: var(--text-dark);
@@ -90,60 +39,61 @@ body {
   margin-bottom: 40px;
 }
 
-/* Sobre nós */
+/* ===== Sobre Nós ===== */
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
 }
+.about-text h2 {
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-top: 0;
+}
+.about-text p {
+  margin: 10px 0;
+}
 .about-media img {
   width: 100%;
   border-radius: 8px;
 }
-.about-text p {
-  margin: 0;
-}
 
-/* Serviços */
-.service-row {
+/* ===== Serviços ===== */
+.service-row .strip-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 40px;
-  margin-bottom: 60px;
+  align-items: center;
 }
 .service-title h3 {
   color: var(--text-dark);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0 0 10px 0;
 }
 .service-desc p {
   margin: 0;
 }
 
-/* Contactos */
+/* ===== Contactos ===== */
 .contact-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 40px;
-}
-.contact-media img {
-  width: 100%;
-  border-radius: 8px;
-  max-width: 450px;
+  align-items: center;
 }
 .contact-block {
   background: rgba(255, 255, 255, 0.7);
   padding: 20px;
   border-radius: 8px;
 }
-.contact-block p {
-  margin: 10px 0;
+.contact-media img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 450px;
 }
 
-/* Formulário */
+/* ===== Formulário ===== */
 .form-holder {
   text-align: center;
 }
@@ -174,4 +124,14 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .about, .service-row .strip-inner, .contact-row {
+    grid-template-columns: 1fr;
+  }
+  .about-media img, .contact-media img {
+    margin: 0 auto;
+  }
 }
