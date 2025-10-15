@@ -3,49 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PTS Lda. - Contabilidade</title>
+  <title>PTS Gestão e Contabilidade Lda.</title>
   <link rel="stylesheet" href="style.css"/>
-
-  <!-- Estilos críticos da capa para garantir empilhamento correto -->
-  <style>
-    .hero { position: relative; height: 100vh; overflow: hidden; color: #fff; }
-    .hero-layer { position:absolute; inset:0; background-size:cover; background-position:center; opacity:0; transition:opacity 1.6s ease-in-out; z-index:0; pointer-events:none; }
-    .hero-layer.active { opacity:1; }
-    .hero-overlay { position:relative; z-index:2; height:100%; width:100%; background:rgba(0,0,0,.55); display:flex; align-items:center; }
-    .hero-inner { width: min(1200px, 92%); margin: 0 auto; display:grid; grid-template-columns: 1fr; gap: 18px; }
-    .hero-logo { width: 220px; height:auto; filter: brightness(0) invert(1); }
-    .hero-title { margin:.2rem 0 0 0; font-size: 2.8rem; font-weight: 700; }
-    .hero-sub { margin:.2rem 0 1rem 0; font-size: 1.1rem; opacity:.95; }
-    .hero-actions { display:flex; align-items:center; gap:10px; margin: .25rem 0 1rem; }
-    .hero-nav { display:flex; gap:18px; flex-wrap:wrap; }
-    .hero-nav a { color:#fff; text-decoration:none; font-weight:600; }
-    .hero-nav a:hover { color: var(--accent); }
-    .lang-switch button { background:#fff; color:var(--ink); border:none; padding:8px 12px; font-weight:600; border-radius:3px; cursor:pointer; }
-    .logo-row { display:flex; align-items:center; gap:14px; }
-    /* em ecrãs pequenos, reduz ligeiramente o logo e títulos */
-    @media (max-width: 480px){
-      .hero-logo{ width: 170px; }
-      .hero-title{ font-size: 2.2rem; }
-    }
-  </style>
 </head>
 <body>
 
-<!-- HERO / CAPA -->
+<!-- ======= CAPA ======= -->
 <header class="hero" id="hero">
-  <!-- camadas de fundo do slideshow -->
   <div class="hero-layer active" id="hl1"></div>
   <div class="hero-layer" id="hl2"></div>
 
-  <!-- conteúdo por cima -->
   <div class="hero-overlay">
     <div class="hero-inner">
       <div>
         <div class="logo-row">
           <img src="logo1.png" alt="Logo PTS" class="hero-logo"/>
         </div>
-        <h1 class="hero-title" id="title">PTS Lda.</h1>
-        <p class="hero-sub" id="subtitle">Mais de 20 anos de experiência em Contabilidade e Gestão</p>
+        <h1 class="hero-title" id="title">PTS Gestão e Contabilidade Lda.</h1>
+        <p class="hero-sub" id="subtitle">Mais de 20 anos de experiência</p>
 
         <div class="hero-actions">
           <div class="lang-switch">
@@ -55,25 +30,25 @@
         </div>
 
         <nav class="hero-nav">
-          <a href="#sobre" id="menu-about">Sobre Nós</a>
-          <a href="#servicos" id="menu-services">Serviços</a>
-          <a href="#contactos" id="menu-contact">Contactos</a>
+          <a href="#sobre">Sobre Nós</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contactos">Contactos</a>
         </nav>
       </div>
     </div>
   </div>
 </header>
 
-<!-- SOBRE NÓS (tira) -->
-<section id="sobre" class="strip strip--beige">
+<!-- ======= SOBRE NÓS ======= -->
+<section id="sobre" class="strip strip--light">
   <div class="strip-inner about">
+    <h2 class="section-title" id="about-title">Sobre Nós</h2>
     <div class="about-media">
       <img src="office.jpeg" alt="Escritório PTS"/>
-      <span class="over-title" id="about-title">Sobre Nós</span>
     </div>
     <div class="about-text">
-      <p id="about-text">
-        A PTS Lda. é uma empresa de contabilidade com mais de 20 anos de experiência,
+      <p>
+        A PTS Gestão e Contabilidade Lda. é uma empresa com mais de 20 anos de experiência,
         especializada em apoiar empresas e particulares na gestão fiscal, financeira e estratégica.
         Apostamos na confiança, proximidade e rigor, acompanhando os nossos clientes em todas as etapas do negócio.
       </p>
@@ -81,76 +56,54 @@
   </div>
 </section>
 
-<!-- SERVIÇOS (título) -->
-<section id="servicos" class="strip strip--blue heading-only">
+<!-- ======= SERVIÇOS ======= -->
+<section id="servicos" class="strip strip--alt">
   <div class="strip-inner">
-    <h2 id="services-title">Serviços</h2>
-  </div>
-</section>
+    <h2 class="section-title" id="services-title">Serviços</h2>
 
-<!-- SERVIÇOS (tiras intercaladas) -->
-<section class="strip strip--beige service-strip">
-  <div class="strip-inner service-row left" id="services-list">
-    <!-- IMPORTANTE: mantemos este id para compatibilidade com o teu lang.js, e colocamos
-         todo o conteúdo DENTRO dele. O “protector” em JS garante que as descrições não desaparecem. -->
-    <div class="service-title">
-      <h3>Contabilidade e Fiscalidade</h3>
+    <div class="service-row left" id="services-list">
+      <div class="service-title"><h3 id="s1-title">Contabilidade e Fiscalidade</h3></div>
+      <div class="service-desc" id="s1-text">
+        <p>Contabilidade organizada mensal, demonstrações financeiras, apuramentos e declarações fiscais (IVA, IRS, IRC),
+        fecho anual e representação junto da Autoridade Tributária.</p>
+      </div>
     </div>
-    <div class="service-desc">
-      <p>Contabilidade organizada mensal, demonstrações financeiras, apuramentos e declarações (IVA, IRS/IRC), fecho anual/mensal e representação junto da Autoridade Tributária.</p>
-    </div>
-  </div>
-</section>
 
-<section class="strip strip--blue service-strip">
-  <div class="strip-inner service-row right">
-    <div class="service-title">
-      <h3>Consultoria Financeira</h3>
+    <div class="service-row right">
+      <div class="service-title"><h3 id="s2-title">Consultoria Financeira</h3></div>
+      <div class="service-desc" id="s2-text">
+        <p>Planeamento financeiro, análise de rentabilidade e cash-flow, otimização de custos e apoio à decisão com base em dados concretos.</p>
+      </div>
     </div>
-    <div class="service-desc">
-      <p>Planeamento financeiro e orçamental, análise de rentabilidade e cash-flow, otimização de estrutura de custos e apoio à decisão com base em indicadores.</p>
-    </div>
-  </div>
-</section>
 
-<section class="strip strip--beige service-strip">
-  <div class="strip-inner service-row left">
-    <div class="service-title">
-      <h3>Gestão Empresarial</h3>
+    <div class="service-row left">
+      <div class="service-title"><h3 id="s3-title">Gestão Empresarial</h3></div>
+      <div class="service-desc" id="s3-text">
+        <p>Implementação de processos eficientes, controlo interno e relatórios de performance para apoiar a sustentabilidade e crescimento.</p>
+      </div>
     </div>
-    <div class="service-desc">
-      <p>Implementação e melhoria de processos, controlo interno, dashboards de indicadores, revisão de pricing e apoio em financiamento e investimento.</p>
-    </div>
-  </div>
-</section>
 
-<section class="strip strip--blue service-strip">
-  <div class="strip-inner service-row right">
-    <div class="service-title">
-      <h3>Apoio em IVA e Obrigações Fiscais</h3>
+    <div class="service-row right">
+      <div class="service-title"><h3 id="s4-title">Apoio em IVA e Obrigações Fiscais</h3></div>
+      <div class="service-desc" id="s4-text">
+        <p>Enquadramento e cumprimento do IVA, submissão de declarações periódicas e gestão de prazos fiscais de forma rigorosa e segura.</p>
+      </div>
     </div>
-    <div class="service-desc">
-      <p>Enquadramento de IVA, submissão de declarações periódicas, SAF-T, comunicação de faturas, gestão de prazos e conformidade legal.</p>
+
+    <div class="service-row left">
+      <div class="service-title"><h3 id="s5-title">Criação de Empresas</h3></div>
+      <div class="service-desc" id="s5-text">
+        <p>Orientação completa no processo de criação de empresas: registo, enquadramento fiscal, abertura de atividade e setup administrativo inicial.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="strip strip--beige service-strip">
-  <div class="strip-inner service-row left">
-    <div class="service-title">
-      <h3>Criação de Empresas</h3>
-    </div>
-    <div class="service-desc">
-      <p>Escolha da forma jurídica, registo, enquadramento fiscal e Segurança Social, abertura de atividade, contas bancárias e setup administrativo inicial.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTOS (tira) -->
-<section id="contactos" class="strip strip--blue contact-strip">
+<!-- ======= CONTACTOS ======= -->
+<section id="contactos" class="strip strip--light contact-strip">
   <div class="strip-inner contact-row">
+    <h2 class="section-title" id="contact-title">Contactos</h2>
     <div class="contact-info">
-      <h2 id="contact-title">Contact</h2>
       <div class="contact-block">
         <p><strong>Morada:</strong><br>
           Rua Quinta das Palmeiras 91,<br>
@@ -167,42 +120,37 @@
   </div>
 </section>
 
-<!-- FORMULÁRIO (centrado numa tira clara) -->
-<section class="strip strip--beige form-strip">
+<!-- ======= FORMULÁRIO ======= -->
+<section class="strip strip--alt form-strip">
   <div class="strip-inner form-holder">
-    <h3 id="form-title">Envie-nos uma mensagem</h3>
+    <h2 class="section-title" id="form-title">Envie-nos uma mensagem</h2>
     <form class="contact-form" action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain">
-      <label for="name" id="label-name">Nome</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email" id="label-email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="topic" id="label-topic">Assunto</label>
-      <select id="topic" name="topic">
-        <option value="novo">Novo Cliente</option>
-        <option value="empresa">Nova Empresa</option>
-        <option value="consultas">Consultas Financeiras</option>
-        <option value="iva">Sobre IVA</option>
-        <option value="gestao">Sobre Gestão</option>
-        <option value="outro">Outro</option>
+      <label>Nome</label>
+      <input type="text" name="name" required>
+      <label>Email</label>
+      <input type="email" name="email" required>
+      <label>Assunto</label>
+      <select name="topic">
+        <option>Novo Cliente</option>
+        <option>Nova Empresa</option>
+        <option>Consultas Financeiras</option>
+        <option>Sobre IVA</option>
+        <option>Sobre Gestão</option>
+        <option>Outro</option>
       </select>
-
-      <label for="message" id="label-message">Mensagem</label>
-      <textarea id="message" name="message" rows="5"></textarea>
-
-      <button type="submit" id="btn-send">Enviar</button>
+      <label>Mensagem</label>
+      <textarea name="message" rows="5"></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </div>
 </section>
 
 <footer>
-  <p id="footer-text">© 2025 PTS Lda. - Todos os direitos reservados.</p>
+  <p>© 2025 PTS Gestão e Contabilidade Lda. - Todos os direitos reservados.</p>
 </footer>
 
-<script src="lang.js"></script>
 <script>
-/* ======= CAPA: Slideshow suave (sempre atrás do conteúdo) ======= */
+/* ===== CAPA SLIDESHOW ===== */
 const images = ['building.jpeg','building2.jpeg','building3.jpeg'];
 let idx = 0;
 const L1 = document.getElementById('hl1');
@@ -220,29 +168,41 @@ function swapBg(){
 }
 setInterval(swapBg, 5000);
 
-/* ======= Anos PT/EN ======= */
+/* ===== SUBTÍTULO EN/PT ===== */
 function setYears(lang){
   const el = document.getElementById('subtitle');
-  if(!el) return;
-  el.textContent = (lang === 'en')
-    ? 'More than 20 years of experience in Accounting and Management'
-    : 'Mais de 20 anos de experiência em Contabilidade e Gestão';
+  el.textContent = (lang === 'en') ? 'More than 20 years of experience' : 'Mais de 20 anos de experiência';
 }
 
-/* ======= Protector: impedir que as descrições dos serviços desapareçam quando mudar a língua ======= */
-(function protectServices(){
-  const host = document.getElementById('services-list');
-  if(!host) return;
-
-  const snapshotHTML = host.innerHTML;
-  const mo = new MutationObserver(() => {
-    // se alguém (ex: lang.js) substituir o conteúdo por algo sem <h3> e <p>, repomos o original
-    if(!host.querySelector('h3') || !host.querySelector('p')){
-      host.innerHTML = snapshotHTML;
+/* ===== TRADUÇÕES DOS SERVIÇOS ===== */
+function setLang(lang){
+  const services = [
+    {
+      pt: ["Contabilidade e Fiscalidade", "Contabilidade organizada mensal, demonstrações financeiras, apuramentos e declarações fiscais (IVA, IRS, IRC), fecho anual e representação junto da Autoridade Tributária."],
+      en: ["Accounting and Taxation", "Monthly accounting, financial statements, tax filings (VAT, IRS, IRC), annual closing and representation before the Tax Authority."]
+    },
+    {
+      pt: ["Consultoria Financeira", "Planeamento financeiro, análise de rentabilidade e cash-flow, otimização de custos e apoio à decisão com base em dados concretos."],
+      en: ["Financial Consulting", "Financial planning, profitability and cash-flow analysis, cost optimization and data-driven business decision support."]
+    },
+    {
+      pt: ["Gestão Empresarial", "Implementação de processos eficientes, controlo interno e relatórios de performance para apoiar a sustentabilidade e crescimento."],
+      en: ["Business Management", "Implementation of efficient processes, internal control and performance reports to support sustainability and growth."]
+    },
+    {
+      pt: ["Apoio em IVA e Obrigações Fiscais", "Enquadramento e cumprimento do IVA, submissão de declarações periódicas e gestão de prazos fiscais de forma rigorosa e segura."],
+      en: ["VAT and Tax Compliance", "VAT framework and compliance, periodic tax return submission, and deadline management with accuracy and safety."]
+    },
+    {
+      pt: ["Criação de Empresas", "Orientação completa no processo de criação de empresas: registo, enquadramento fiscal, abertura de atividade e setup administrativo inicial."],
+      en: ["Company Incorporation", "Complete guidance in the company creation process: registration, tax framework, business opening and administrative setup."]
     }
+  ];
+  services.forEach((s, i)=>{
+    document.getElementById(`s${i+1}-title`).textContent = s[lang][0];
+    document.getElementById(`s${i+1}-text`).innerHTML = `<p>${s[lang][1]}</p>`;
   });
-  mo.observe(host, { childList:true, subtree:true });
-})();
+}
 </script>
 </body>
 </html>
