@@ -1,174 +1,177 @@
-:root{
-  --ink: #0d274d;         /* azul escuro */
-  --ink-2:#153863;
-  --beige:#efe4cf;        /* bege suave */
-  --beige-2:#e7d9bf;
-  --bg:#f5f6f9;
-  --line:#e2e5ec;
-  --text:#2a2f36;
-  --accent:#d5a52c;       /* dourado discreto para realces */
+:root {
+  --blue-light: #e9eff7;
+  --blue-light-2: #dbe6f2;
+  --beige: #f5efe4;
+  --beige-2: #ece4d6;
+  --text-dark: #1e3a5f;
+  --text: #333;
 }
 
-/* BASE */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; color:var(--text); background:var(--bg); line-height:1.6}
-
-/* LINKS GERAIS */
-a{color:inherit}
-
-/* ====== STRIPS (tiras horizontais) ====== */
-.strip{
-  padding: 64px 0;
-}
-.strip .strip-inner{
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
-.strip--blue{
-  background: linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
-  color: #fff;
-}
-.strip--beige{
-  background: linear-gradient(180deg, var(--beige) 0%, var(--beige-2) 100%);
-  color: #1c2533;
-  border-top: 1px solid rgba(0,0,0,.05);
-  border-bottom: 1px solid rgba(0,0,0,.05);
-}
-.heading-only h2{
+/* Geral */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  text-align: center;
-  letter-spacing: .3px;
+  background: #fafafa;
+  color: var(--text);
+  line-height: 1.6;
 }
 
-/* ====== SOBRE NÓS (tira com imagem + título sobreposto) ====== */
-.about{
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+}
+.hero-layer.active { opacity: 1; }
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+}
+.hero-inner {
+  margin-left: 8%;
+}
+.hero-logo {
+  width: 220px;
+  filter: brightness(0) invert(1);
+}
+.hero-title {
+  font-size: 2.8rem;
+  margin: 10px 0 5px;
+}
+.hero-sub {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: 600;
+}
+.lang-switch button {
+  background: white;
+  color: var(--text-dark);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Strips */
+.strip {
+  padding: 80px 0;
+}
+.strip--light {
+  background: linear-gradient(to bottom, var(--beige), var(--beige-2));
+}
+.strip--alt {
+  background: linear-gradient(to bottom, var(--blue-light), var(--blue-light-2));
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Sobre nós */
+.about {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
 }
-.about-media{ position: relative; }
-.about-media img{
+.about-media img {
   width: 100%;
-  display: block;
-  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 8px;
 }
-.over-title{
-  position: absolute; left: 16px; top: 16px;
-  background: rgba(13,39,77,.9);
-  color:#fff; padding: 6px 10px; font-weight:700; letter-spacing:.2px;
+.about-text p {
+  margin: 0;
 }
-.about-text p{ margin: 0 }
 
-/* ====== SERVIÇOS — tiras intercaladas ====== */
-.service-strip .strip-inner{
-  display: grid;
-}
-.service-row{
+/* Serviços */
+.service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
   align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
 }
-.service-row.left .service-title{ order: 1; text-align: right; }
-.service-row.left .service-desc{ order: 2; }
-.service-row.right .service-title{ order: 2; text-align: left; }
-.service-row.right .service-desc{ order: 1; }
-
-.service-title h3{
-  margin: 0;
+.service-title h3 {
+  color: var(--text-dark);
   font-size: 1.5rem;
-  letter-spacing: .2px;
-  color: currentColor;
+  margin: 0 0 10px 0;
 }
-.service-desc p{
+.service-desc p {
   margin: 0;
-  font-size: 1.03rem;
 }
 
-/* ====== CONTACTOS — tira com info + imagem ====== */
-.contact-row{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-  align-items: start;
-}
-.contact-info h2{ margin: 0 0 12px 0; }
-.contact-block{
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.2);
-  padding: 14px;
-}
-.strip--beige .contact-block{
-  background: rgba(255,255,255,.6);
-  border-color: rgba(0,0,0,.06);
-}
-.contact-block p{ margin: 0 0 12px 0; }
-.contact-media img{
-  width: 100%;
-  display: block;
-  border: 1px solid rgba(255,255,255,.25);
-  max-width: 480px;            /* ⚑ não deixa a imagem gigante */
-  margin-left: auto;
-}
-
-/* ====== FORMULÁRIO (tira clara, centrado) ====== */
-.form-holder{
+/* Contactos */
+.contact-row {
   display: grid;
-  place-items: center;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.contact-media img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 450px;
+}
+.contact-block {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+}
+.contact-block p {
+  margin: 10px 0;
+}
+
+/* Formulário */
+.form-holder {
   text-align: center;
 }
-.form-holder h3{
-  margin: 0 0 16px 0;
-  letter-spacing: .2px;
-}
-.contact-form{
-  width: min(760px, 100%);
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px 20px;
-  text-align: left;
+  gap: 20px;
 }
-.contact-form label{ font-weight: 600; }
 .contact-form input,
 .contact-form select,
-.contact-form textarea{
-  width: 100%;
+.contact-form textarea {
   padding: 10px;
-  border: 1px solid #cfd6e3;
-  background: #fff;
-  border-radius: 2px;
-  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-.contact-form textarea{ grid-column: 1 / -1; }
-.contact-form button{
-  grid-column: 1 / -1;
-  justify-self: center;
-  padding: 11px 26px;
-  background: var(--ink);
-  color:#fff;
-  border: 1px solid var(--ink);
-  font-weight: 700;
+.contact-form button {
+  background: var(--text-dark);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 4px;
   cursor: pointer;
 }
-.contact-form button:hover{ background: var(--ink-2); }
-
-/* ====== FOOTER ====== */
-footer{
-  background: var(--ink);
-  color:#fff;
-  text-align:center;
-  padding: 22px 16px;
-}
-
-/* ====== RESPONSIVO ====== */
-@media (max-width: 980px){
-  .about{ grid-template-columns: 1fr; }
-  .service-row{ grid-template-columns: 1fr; }
-  .service-row.left .service-title,
-  .service-row.right .service-title{ text-align: left; }
-  .contact-row{ grid-template-columns: 1fr; }
-  .contact-media img{ margin: 0 auto; }
-  .contact-form{ grid-template-columns: 1fr; }
+footer {
+  background: var(--text-dark);
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
