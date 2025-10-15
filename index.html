@@ -40,57 +40,69 @@
 </header>
 
 <!-- ======= SOBRE NÓS ======= -->
-<section id="sobre" class="strip strip--light">
+<section id="sobre" class="strip strip--beige">
   <div class="strip-inner about">
-    <h2 class="section-title" id="about-title">Sobre Nós</h2>
-    <div class="about-media">
-      <img src="office.jpeg" alt="Escritório PTS"/>
-    </div>
     <div class="about-text">
+      <h2 class="section-title" id="about-title">Sobre Nós</h2>
       <p>
         A PTS Gestão e Contabilidade Lda. é uma empresa com mais de 20 anos de experiência,
         especializada em apoiar empresas e particulares na gestão fiscal, financeira e estratégica.
         Apostamos na confiança, proximidade e rigor, acompanhando os nossos clientes em todas as etapas do negócio.
       </p>
+      <p>
+        Trabalhamos de forma moderna, proativa e próxima, usando tecnologia e know-how para garantir eficiência e clareza.
+        O sucesso dos nossos clientes é o nosso principal objetivo.
+      </p>
+    </div>
+    <div class="about-media">
+      <img src="office.jpeg" alt="Escritório PTS">
     </div>
   </div>
 </section>
 
 <!-- ======= SERVIÇOS ======= -->
-<section id="servicos" class="strip strip--alt">
-  <div class="strip-inner">
-    <h2 class="section-title" id="services-title">Serviços</h2>
+<section id="servicos">
+  <h2 class="section-title" id="services-title">Serviços</h2>
 
-    <div class="service-row left" id="services-list">
+  <div class="strip strip--light service-row left">
+    <div class="strip-inner">
       <div class="service-title"><h3 id="s1-title">Contabilidade e Fiscalidade</h3></div>
       <div class="service-desc" id="s1-text">
         <p>Contabilidade organizada mensal, demonstrações financeiras, apuramentos e declarações fiscais (IVA, IRS, IRC),
         fecho anual e representação junto da Autoridade Tributária.</p>
       </div>
     </div>
+  </div>
 
-    <div class="service-row right">
+  <div class="strip strip--alt service-row right">
+    <div class="strip-inner">
       <div class="service-title"><h3 id="s2-title">Consultoria Financeira</h3></div>
       <div class="service-desc" id="s2-text">
         <p>Planeamento financeiro, análise de rentabilidade e cash-flow, otimização de custos e apoio à decisão com base em dados concretos.</p>
       </div>
     </div>
+  </div>
 
-    <div class="service-row left">
+  <div class="strip strip--light service-row left">
+    <div class="strip-inner">
       <div class="service-title"><h3 id="s3-title">Gestão Empresarial</h3></div>
       <div class="service-desc" id="s3-text">
         <p>Implementação de processos eficientes, controlo interno e relatórios de performance para apoiar a sustentabilidade e crescimento.</p>
       </div>
     </div>
+  </div>
 
-    <div class="service-row right">
+  <div class="strip strip--alt service-row right">
+    <div class="strip-inner">
       <div class="service-title"><h3 id="s4-title">Apoio em IVA e Obrigações Fiscais</h3></div>
       <div class="service-desc" id="s4-text">
         <p>Enquadramento e cumprimento do IVA, submissão de declarações periódicas e gestão de prazos fiscais de forma rigorosa e segura.</p>
       </div>
     </div>
+  </div>
 
-    <div class="service-row left">
+  <div class="strip strip--light service-row left">
+    <div class="strip-inner">
       <div class="service-title"><h3 id="s5-title">Criação de Empresas</h3></div>
       <div class="service-desc" id="s5-text">
         <p>Orientação completa no processo de criação de empresas: registo, enquadramento fiscal, abertura de atividade e setup administrativo inicial.</p>
@@ -100,10 +112,10 @@
 </section>
 
 <!-- ======= CONTACTOS ======= -->
-<section id="contactos" class="strip strip--light contact-strip">
+<section id="contactos" class="strip strip--alt contact-strip">
   <div class="strip-inner contact-row">
-    <h2 class="section-title" id="contact-title">Contactos</h2>
     <div class="contact-info">
+      <h2 class="section-title" id="contact-title">Contactos</h2>
       <div class="contact-block">
         <p><strong>Morada:</strong><br>
           Rua Quinta das Palmeiras 91,<br>
@@ -121,7 +133,7 @@
 </section>
 
 <!-- ======= FORMULÁRIO ======= -->
-<section class="strip strip--alt form-strip">
+<section class="strip strip--beige form-strip">
   <div class="strip-inner form-holder">
     <h2 class="section-title" id="form-title">Envie-nos uma mensagem</h2>
     <form class="contact-form" action="mailto:geral@ptsgestao.pt" method="post" enctype="text/plain">
@@ -150,7 +162,7 @@
 </footer>
 
 <script>
-/* ===== CAPA SLIDESHOW ===== */
+/* Capa com fade */
 const images = ['building.jpeg','building2.jpeg','building3.jpeg'];
 let idx = 0;
 const L1 = document.getElementById('hl1');
@@ -168,40 +180,9 @@ function swapBg(){
 }
 setInterval(swapBg, 5000);
 
-/* ===== SUBTÍTULO EN/PT ===== */
 function setYears(lang){
-  const el = document.getElementById('subtitle');
-  el.textContent = (lang === 'en') ? 'More than 20 years of experience' : 'Mais de 20 anos de experiência';
-}
-
-/* ===== TRADUÇÕES DOS SERVIÇOS ===== */
-function setLang(lang){
-  const services = [
-    {
-      pt: ["Contabilidade e Fiscalidade", "Contabilidade organizada mensal, demonstrações financeiras, apuramentos e declarações fiscais (IVA, IRS, IRC), fecho anual e representação junto da Autoridade Tributária."],
-      en: ["Accounting and Taxation", "Monthly accounting, financial statements, tax filings (VAT, IRS, IRC), annual closing and representation before the Tax Authority."]
-    },
-    {
-      pt: ["Consultoria Financeira", "Planeamento financeiro, análise de rentabilidade e cash-flow, otimização de custos e apoio à decisão com base em dados concretos."],
-      en: ["Financial Consulting", "Financial planning, profitability and cash-flow analysis, cost optimization and data-driven business decision support."]
-    },
-    {
-      pt: ["Gestão Empresarial", "Implementação de processos eficientes, controlo interno e relatórios de performance para apoiar a sustentabilidade e crescimento."],
-      en: ["Business Management", "Implementation of efficient processes, internal control and performance reports to support sustainability and growth."]
-    },
-    {
-      pt: ["Apoio em IVA e Obrigações Fiscais", "Enquadramento e cumprimento do IVA, submissão de declarações periódicas e gestão de prazos fiscais de forma rigorosa e segura."],
-      en: ["VAT and Tax Compliance", "VAT framework and compliance, periodic tax return submission, and deadline management with accuracy and safety."]
-    },
-    {
-      pt: ["Criação de Empresas", "Orientação completa no processo de criação de empresas: registo, enquadramento fiscal, abertura de atividade e setup administrativo inicial."],
-      en: ["Company Incorporation", "Complete guidance in the company creation process: registration, tax framework, business opening and administrative setup."]
-    }
-  ];
-  services.forEach((s, i)=>{
-    document.getElementById(`s${i+1}-title`).textContent = s[lang][0];
-    document.getElementById(`s${i+1}-text`).innerHTML = `<p>${s[lang][1]}</p>`;
-  });
+  document.getElementById('subtitle').textContent =
+    lang === 'en' ? 'More than 20 years of experience' : 'Mais de 20 anos de experiência';
 }
 </script>
 </body>
